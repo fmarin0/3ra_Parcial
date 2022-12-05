@@ -36,16 +36,16 @@ void insertNode(struct node* nd, int data){
 
 int nivel = 0;
 
-void buscar(struct node, int n){
+void buscar(struct node* nd, int n){
 
 	nivel++;
 
 	if(n == node->data){
 	 printf("El numero %d ha sido encontrado en el nivel %d", n, nivel);
-	}else if(n < node -> data && node -> left_child !=NULL){
-	 buscar(node -> left_child, n);
-	}else if(n > node -> data && node->right_child != NULL){
-	 buscar(node->right_child, n);
+	}else if(n < nd -> data && nd -> left_child !=NULL){
+	 buscar(nd -> left_child, n);
+	}else if(n > nd -> data && nd->right_child != NULL){
+	 buscar(nd->right_child, n);
 	}else{
 	 printf("El numero %d no se encontro", n);
 	}
