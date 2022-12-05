@@ -40,7 +40,7 @@ void buscar(struct node* nd, int n){
 
 	nivel++;
 
-	if(n == node->data){
+	if(n == nd->data){
 	 printf("El numero %d ha sido encontrado en el nivel %d", n, nivel);
 	}else if(n < nd -> data && nd -> left_child !=NULL){
 	 buscar(nd -> left_child, n);
@@ -68,7 +68,7 @@ int main(){
     insertNode(root,21);
 	
 
-    printf("Ingrese el numero que desea buscar: ")
+    printf("Ingrese el numero que desea buscar: ");
     scanf("%d", &n);
 
 	buscar(root, n);    
