@@ -19,7 +19,7 @@ struct node* newNode(int data){
 }
 
 void insertNode(struct node* nd, int data){
-    if(data>nd->data){
+    if(data> nd->data){
         if(nd->right_child==NULL){
             nd->right_child=newNode(data);
         }else{
@@ -34,12 +34,45 @@ void insertNode(struct node* nd, int data){
     }
 }
 
+int nivel = 0;
+
+void buscar(struct node, int n){
+
+	nivel++;
+
+	if(n == node->data){
+	 printf("El numero %d ha sido encontrado en el nivel %d", n, nivel);
+	}else if(n < node -> data && node -> left_child !=NULL){
+	 buscar(node -> left_child, n);
+	}else if(n > node -> data && node->right_child != NULL){
+	 buscar(node->right_child, n);
+	}else{
+	 printf("El numero %d no se encontro", n);
+	}
+
+}
+
 
 int main(){
+
+    int n = 0;
     struct node* root=NULL;
-    root=newNode(8);
+    root=newNode(6);
+    insertNode(root,5);
+    insertNode(root,11);
+    insertNode(root,4);
+    insertNode(root,8);
+    insertNode(root,12);
     insertNode(root,3);
-    insertNode(root,20);
+    insertNode(root,9);
+    insertNode(root,21);
+	
+
+    printf("Ingrese el numero que desea buscar: ")
+    scanf("%d", &n);
+
+	buscar(root, n);    
 
     return 0;
-}
+ }
+
